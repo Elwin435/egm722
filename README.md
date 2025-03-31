@@ -1,6 +1,8 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iamdonovan/egm722/main)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iamdonovan/egm722.binder/main)
 
 # EGM722: Programming for GIS and Remote Sensing Exercises
+
+For full setup and installation instructions, please see [the website](https://iamdonovan.github.io/teaching/egm722/setup/index.html).
 
 ## 1. Getting started
 
@@ -38,25 +40,25 @@ C:\Users\iamdonovan> conda env create -f environment.yml
 This will probably take some time (so feel free to catch up on Facebook or whatever kids do nowadays), but fortunately 
 you will only have to do this once. If you
 
-## 4. Start jupyter-notebook
+## 4. Start Jupyter Lab
 
-From Anaconda Navigator, you can launch jupyter-notebook directly, and navigate to the folder where the first week's
-practical material is located. Make sure that your egm722 environment is activated.
+From Anaconda Navigator, you can launch Jupyter Lab, and navigate to the folder where the first week's
+practical material is located. Make sure that your `egm722` environment is activated.
 
-From the command-line, first open a terminal window or an __Anaconda Prompt__, and navigate to the folder where the
-first week's practical material is located.
+From the command-line, first open a terminal window or an __Anaconda Prompt__, and navigate to the folder where you have
+cloned the repository.
 
-Activate your newly-created environment (`conda activate egm722`). Launch jupyter-notebook (`jupyter-notebook.exe`),
+Activate your newly-created environment (`conda activate egm722`). Next, run Jupyter Lab (`jupyter-lab`),
 which should launch a web browser window, which should give you an overview of the current folder. 
 
 ## 5. Next steps
 The material for this module is organized as follows:
 
-Week 1. Introduction to git and programming with python
-Week 2. More introduction to python
-Week 3. Working with vector data in python
-Week 4. Working with raster data in python
-Week 5. Additional exercises
+- Week 1. Introduction to git and programming with python
+- Week 2. More introduction to python
+- Week 3. Working with vector data in python
+- Week 4. Working with raster data in python
+- Week 5. Additional exercises
 
 You are free to work through the material at your own pace. If you are enrolled in EGM722 at Ulster University, you
 will find additional resources via the module webpage on Blackboard.
