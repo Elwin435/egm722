@@ -8,6 +8,26 @@ import matplotlib.patches as mpatches
 
 # ---------------------------------------------------------------------------------------------------------------------
 # in this section, write the script to load the data and complete the main part of the analysis.
+# Load the counties and wards data
+counties = gpd.read_file('data_files/Counties.shp')
+wards = gpd.read_file('data_files/Wards.shp')
+
+# Ensure both datasets are in the same projection (UTM projection for consistency)
+wards = wards.to_crs(epsg=32629)
+counties = counties.to_crs(epsg=32629)
+
+# Perform spatial join to associate wards with counties
+wards_county = gpd.sjoin(wards, counties, how='inner', predicate='intersects')
+
+# Summarize total population by county
+population_by_county = wards_county.groupby('CountyName')['Population'].sum().reset_index()
+
+# Print county with highest and lowest population
+max_county = population_by_county.loc[population_by_county['Population'].idxmax()]
+min_county = population_by_county.loc[population_by_county['Population'].idxmin()]
+
+print("County with highest population: {} - {} residents".format(max_county['CountyName'], max_county['Population']))
+print("County with lowest population: {} - {} residents".format(min_county['CountyName'], min_county['Population']))
 # try to print the results to the screen using the format method demonstrated in the workbook
 
 # load the necessary data here and transform to a UTM projection
@@ -48,3 +68,4 @@ ax.legend(county_handles, ['County Boundaries'], fontsize=12, loc='upper left', 
 
 # save the figure
 fig.savefig('sample_map.png', dpi=300, bbox_inches='tight')
+print("Map saved as population_map.png")
